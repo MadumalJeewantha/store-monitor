@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefViewportHeight="389.0" prefViewportWidth="586.0" prefWidth="627.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mdjee.storemonitor.settings.VehiclesController">
+   <content>
+      <VBox prefHeight="679.0" prefWidth="919.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <VBox maxHeight="200.0" prefHeight="43.0" prefWidth="748.0" style="-fx-background-color: #2196f3;">
+               <children>
+                  <Label text="Vehicles" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Here you can add new vehicles" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="30.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <StackPane fx:id="stackPane" alignment="TOP_LEFT" prefHeight="628.0" prefWidth="949.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="972.0">
+                     <children>
+                        <VBox layoutX="9.0" layoutY="-1.0" prefHeight="653.0" prefWidth="301.0">
+                           <children>
+                              <TitledPane animated="false" collapsible="false" prefHeight="605.0" prefWidth="301.0" text="Vehicle details">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="574.0" prefWidth="306.0" style="-fx-background-color: #FFFFFF;">
+                                       <children>
+                                          <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="288.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../style/style.css">
+                                             <children>
+                                                <JFXTextField fx:id="vehicleIdTextField" labelFloat="true" layoutX="40.0" layoutY="205.0" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Vehicle Number">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <JFXTextField fx:id="nameTextField" labelFloat="true" layoutX="10.0" layoutY="175.0" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Vehicle Name">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <JFXTextField fx:id="descriptionTextField" labelFloat="true" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Description">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <AnchorPane prefHeight="382.0" prefWidth="288.0">
+                                                   <VBox.margin>
+                                                      <Insets top="30.0" />
+                                                   </VBox.margin>
+                                                   <children>
+                                                      <JFXButton fx:id="addButton" buttonType="RAISED" layoutX="154.0" layoutY="285.0" onAction="#addToVehicle" prefHeight="32.0" prefWidth="103.0" styleClass="common-button" text="Add" />
+                                                      <JFXButton fx:id="clearFieldsButton" buttonType="RAISED" layoutX="27.0" layoutY="285.0" onAction="#clearFields" prefHeight="32.0" prefWidth="103.0" styleClass="common-button" text="Clear fields" />
+                                                      <JFXButton fx:id="deleteButton" buttonType="RAISED" layoutX="154.0" layoutY="334.0" onAction="#deleteVehicle" prefHeight="32.0" prefWidth="103.0" styleClass="danger-button" text="Delete" />
+                                                      <JFXButton fx:id="updateButton" buttonType="RAISED" layoutX="27.0" layoutY="334.0" onAction="#updateVehicle" prefHeight="32.0" prefWidth="103.0" styleClass="common-button" text="Update" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </VBox>
+                        <TableView fx:id="tableView" layoutX="324.0" layoutY="9.0" prefHeight="604.0" prefWidth="622.0">
+                           <columns>
+                              <TableColumn fx:id="vehicleIdColumn" prefWidth="174.0" text="Vehicle Number" />
+                              <TableColumn fx:id="nameColumn" prefWidth="170.0" text="Vehicle Name" />
+                              <TableColumn fx:id="descriptionColumn" prefWidth="267.0" text="Description" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

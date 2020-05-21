@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefViewportHeight="389.0" prefViewportWidth="586.0" prefWidth="534.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mdjee.storemonitor.settings.SecurityController">
+   <content>
+      <VBox prefHeight="679.0" prefWidth="919.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <VBox maxHeight="200.0" prefHeight="43.0" prefWidth="748.0" style="-fx-background-color: #2196f3;">
+               <children>
+                  <Label text="Security Center" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Keeps backup to prevent from data lost" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="30.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <StackPane fx:id="stackPane" alignment="TOP_LEFT" prefHeight="628.0" prefWidth="949.0">
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <TitledPane animated="false" collapsible="false" layoutX="8.0" layoutY="9.0" prefHeight="378.0" prefWidth="353.0" text="Backup">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="9.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Backup_center_icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="176.0" layoutY="12.0" prefHeight="49.0" prefWidth="169.0" text="Backup your data to prevent from any data lost." wrapText="true" />
+                                    <Label layoutX="176.0" layoutY="58.0" prefHeight="49.0" prefWidth="169.0" text="Store your backups at external place is recommended." wrapText="true" />
+                                    <JFXProgressBar fx:id="backupProgressBar" layoutX="26.0" layoutY="321.0" prefHeight="0.0" prefWidth="288.0" progress="0.0" />
+                                    <JFXButton fx:id="backupButton" buttonType="RAISED" layoutX="219.0" layoutY="271.0" onAction="#backup" prefHeight="34.0" prefWidth="94.0" styleClass="common-button" text="Backup" />
+                                    <Label layoutX="26.0" layoutY="188.0" prefHeight="66.0" prefWidth="296.0" text="Backup option will save whole data related to Store Monitor App, which can be used to restore in case you needed." wrapText="true" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <TitledPane animated="false" collapsible="false" layoutX="373.0" layoutY="9.0" prefHeight="378.0" prefWidth="353.0" text="Restore">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="139.0" fitWidth="141.0" layoutX="9.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/apps-system-software-update-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="176.0" layoutY="14.0" prefHeight="69.0" prefWidth="169.0" text="This will remove current database and you have to restart Store Monitor App in order to take the effect." wrapText="true" />
+                                    <JFXProgressBar fx:id="restoreProgressBar" layoutX="26.0" layoutY="321.0" prefHeight="0.0" prefWidth="288.0" progress="0.0" />
+                                    <JFXButton fx:id="restoreButton" buttonType="RAISED" layoutX="219.0" layoutY="271.0" onAction="#restore" prefHeight="34.0" prefWidth="94.0" styleClass="common-button" text="Restore" />
+                                    <Label layoutX="26.0" layoutY="188.0" prefHeight="36.0" prefWidth="296.0" text="Restore option make sure you have previously backed up data as current database." wrapText="true" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="606.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mdjee.storemonitor.login.LoginController">
+   <children>
+      <StackPane fx:id="stackPane" layoutX="184.0" layoutY="100.0" prefHeight="550.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2196f3;" />
+                  <Pane prefWidth="800.0" style="-fx-background-color: #EDE7F6;" />
+               </children>
+            </VBox>
+            <AnchorPane prefHeight="486.0" prefWidth="710.0" style="-fx-background-color: transparent;" StackPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="signInPane" layoutX="69.0" layoutY="109.0" prefHeight="342.0" prefWidth="469.0" style="-fx-background-color: WHITE; -fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-border-radius: 4; -fx-padding: 8;">
+                     <children>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="185.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/user.png" />
+                           </image>
+                        </ImageView>
+                        <JFXTextField fx:id="userNameTextField" labelFloat="true" layoutX="75.0" layoutY="133.0" maxWidth="316.0" minWidth="233.0" prefHeight="31.0" prefWidth="316.0" promptText="Username">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="passwordPasswordField" labelFloat="true" layoutX="75.0" layoutY="195.0" maxWidth="316.0" minWidth="235.0" prefHeight="31.0" prefWidth="316.0" promptText="Password">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXButton fx:id="signInButton" buttonType="RAISED" defaultButton="true" layoutX="260.0" layoutY="267.0" onAction="#signIn" prefHeight="32.0" prefWidth="100.0" styleClass="common-button" text="Sign in" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="forgetPasswordButton" layoutX="130.0" layoutY="271.0" onAction="#forgetPassword" text="Forget password?" />
+                     </children>
+                  </AnchorPane>
+                  <VBox layoutX="91.0" layoutY="30.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="34.0" prefWidth="425.0" text="Welcome to Store Monitor" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="425.0" text="Please login using your username and password" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <AnchorPane fx:id="userNamePane" layoutX="68.0" layoutY="110.0" prefHeight="342.0" prefWidth="469.0" style="-fx-background-color: WHITE; -fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-border-radius: 4; -fx-padding: 8;" visible="false">
+                     <children>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="185.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/user.png" />
+                           </image>
+                        </ImageView>
+                        <JFXTextField fx:id="userNameUserNamePaneTextField" labelFloat="true" layoutX="75.0" layoutY="219.0" maxWidth="316.0" minWidth="233.0" prefHeight="31.0" prefWidth="316.0" promptText="Username">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="checkUserNameButton" buttonType="RAISED" layoutX="175.0" layoutY="275.0" onAction="#showQuestion1Pane" prefHeight="32.0" prefWidth="100.0" styleClass="common-button" text="Next" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <Label layoutX="75.0" layoutY="113.0" prefHeight="80.0" prefWidth="316.0" text="Please enter your username to start password recovery." wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="signInUserNamePaneButton" layoutX="292.0" layoutY="279.0" onAction="#showSignInPane" text="Sign in?" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="question1Pane" layoutX="69.0" layoutY="110.0" prefHeight="342.0" prefWidth="469.0" style="-fx-background-color: WHITE; -fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-border-radius: 4; -fx-padding: 8;" visible="false">
+                     <children>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="185.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/user.png" />
+                           </image>
+                        </ImageView>
+                        <JFXTextField fx:id="answer1TextField" labelFloat="true" layoutX="75.0" layoutY="219.0" maxWidth="316.0" minWidth="233.0" prefHeight="31.0" prefWidth="316.0" promptText="Answer">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="nextQuestionQuestion1PaneButton" buttonType="RAISED" layoutX="175.0" layoutY="270.0" onAction="#showQuestion2Pane" prefHeight="32.0" prefWidth="100.0" styleClass="common-button" text="Next" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <Label fx:id="question1Label" layoutX="75.0" layoutY="113.0" prefHeight="80.0" prefWidth="316.0" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="signInQuestion1PaneButton" layoutX="288.0" layoutY="274.0" onAction="#showSignInPane" text="Sign in?" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="question2Pane" layoutX="69.0" layoutY="110.0" prefHeight="342.0" prefWidth="469.0" style="-fx-background-color: WHITE; -fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-border-radius: 4; -fx-padding: 8;" visible="false">
+                     <children>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="185.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/user.png" />
+                           </image>
+                        </ImageView>
+                        <JFXTextField fx:id="answer2TextField" labelFloat="true" layoutX="75.0" layoutY="219.0" maxWidth="316.0" minWidth="233.0" prefHeight="31.0" prefWidth="316.0" promptText="Answer">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="nextQuestionQuestion2PaneButton" buttonType="RAISED" layoutX="175.0" layoutY="270.0" onAction="#showQuestion3Pane" prefHeight="32.0" prefWidth="100.0" styleClass="common-button" text="Next" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <Label fx:id="question2Label" layoutX="75.0" layoutY="113.0" prefHeight="80.0" prefWidth="316.0" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="signInQuestion2PaneButton" layoutX="293.0" layoutY="273.0" onAction="#showSignInPane" text="Sign in?" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="question3Pane" layoutX="68.0" layoutY="110.0" prefHeight="342.0" prefWidth="469.0" style="-fx-background-color: WHITE; -fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-border-radius: 4; -fx-padding: 8;" visible="false">
+                     <children>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="185.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/user.png" />
+                           </image>
+                        </ImageView>
+                        <JFXTextField fx:id="answer3TextField" labelFloat="true" layoutX="75.0" layoutY="219.0" maxWidth="316.0" minWidth="233.0" prefHeight="31.0" prefWidth="316.0" promptText="Answer">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="nextQuestionQuestion3PaneButton" buttonType="RAISED" layoutX="175.0" layoutY="270.0" onAction="#showCreateNewPasswordPane" prefHeight="32.0" prefWidth="100.0" styleClass="common-button" text="Next" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <Label fx:id="question3Label" layoutX="75.0" layoutY="113.0" prefHeight="80.0" prefWidth="316.0" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="signInQuestion3PaneButton" layoutX="292.0" layoutY="274.0" onAction="#showSignInPane" text="Sign in?" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="passwordResetPane" layoutX="69.0" layoutY="109.0" prefHeight="342.0" prefWidth="469.0" style="-fx-background-color: WHITE; -fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-border-radius: 4; -fx-padding: 8;" visible="false">
+                     <children>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="185.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/user.png" />
+                           </image>
+                        </ImageView>
+                        <JFXPasswordField fx:id="confirmPasswordResetPasswordPanePasswordField" labelFloat="true" layoutX="75.0" layoutY="210.0" maxWidth="316.0" minWidth="235.0" prefHeight="31.0" prefWidth="316.0" promptText="Confirm Password">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXButton fx:id="createPasswordPasswordResetPaneButton" buttonType="RAISED" layoutX="175.0" layoutY="266.0" onAction="#createPassword" prefHeight="32.0" prefWidth="100.0" styleClass="common-button" text="Change" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXPasswordField fx:id="passwordResetPasswordPanePasswordField" labelFloat="true" layoutX="75.0" layoutY="145.0" maxWidth="316.0" minWidth="235.0" prefHeight="31.0" prefWidth="316.0" promptText="Password">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <Label layoutX="75.0" layoutY="100.0" text="Create a new strong  password.">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="signInChangePasswordPanePaneButton" layoutX="293.0" layoutY="270.0" onAction="#showSignInPane" text="Sign in?" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

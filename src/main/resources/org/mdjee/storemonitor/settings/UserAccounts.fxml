@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefViewportHeight="389.0" prefViewportWidth="586.0" prefWidth="708.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mdjee.storemonitor.settings.UserAccountsController">
+   <content>
+      <VBox prefHeight="679.0" prefWidth="919.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <VBox maxHeight="200.0" prefHeight="43.0" prefWidth="748.0" style="-fx-background-color: #2196f3;">
+               <children>
+                  <Label text="User Accounts" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="This is the place where you can manage user accounts" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="30.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <StackPane fx:id="stackPane" alignment="TOP_LEFT" prefHeight="628.0" prefWidth="949.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="972.0">
+                     <children>
+                        <VBox layoutX="6.0" layoutY="-2.0" prefHeight="653.0" prefWidth="301.0">
+                           <children>
+                              <TitledPane animated="false" collapsible="false" prefHeight="605.0" prefWidth="301.0" text="Change password">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="574.0" prefWidth="306.0" style="-fx-background-color: #FFFFFF;">
+                                       <children>
+                                          <AnchorPane fx:id="newPasswordPane" prefHeight="382.0" prefWidth="298.0" visible="false">
+                                             <children>
+                                                <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="288.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../style/style.css">
+                                                   <children>
+                                                      <JFXPasswordField fx:id="newPasswordPasswordField" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="221.0" promptText="New password">
+                                                         <VBox.margin>
+                                                            <Insets left="30.0" top="20.0" />
+                                                         </VBox.margin>
+                                                      </JFXPasswordField>
+                                                      <JFXPasswordField fx:id="confirmPasswordPasswordField" labelFloat="true" layoutX="40.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="221.0" promptText="Confirm password">
+                                                         <VBox.margin>
+                                                            <Insets left="30.0" top="30.0" />
+                                                         </VBox.margin>
+                                                      </JFXPasswordField>
+                                                      <JFXButton fx:id="changePasswordButton" buttonType="RAISED" onAction="#changePassword" prefHeight="32.0" prefWidth="115.0" styleClass="common-button" text="Change password">
+                                                         <VBox.margin>
+                                                            <Insets left="30.0" top="40.0" />
+                                                         </VBox.margin>
+                                                      </JFXButton>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                          <VBox fx:id="currentPasswordVBox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="288.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../style/style.css">
+                                             <children>
+                                                <JFXPasswordField fx:id="currentPasswordPasswordField" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="221.0" promptText="Current password">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="20.0" />
+                                                   </VBox.margin>
+                                                </JFXPasswordField>
+                                                <JFXButton fx:id="nextButton" buttonType="RAISED" onAction="#checkCurrentPassword" prefHeight="32.0" prefWidth="103.0" styleClass="common-button" text="Next">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="40.0" />
+                                                   </VBox.margin>
+                                                </JFXButton>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

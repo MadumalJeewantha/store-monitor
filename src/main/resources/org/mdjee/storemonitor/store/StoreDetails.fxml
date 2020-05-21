@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="679.0" prefWidth="919.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mdjee.storemonitor.store.StoreDetailsController">
+   <children>
+      <VBox maxHeight="200.0" prefHeight="43.0" prefWidth="748.0" style="-fx-background-color: #2196f3;">
+         <children>
+            <Label text="Store details" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label prefHeight="37.0" prefWidth="407.0" text="Here you will see all the products and this is like your in-hand stock" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" left="30.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+      <StackPane fx:id="stackPane" alignment="TOP_LEFT" prefHeight="628.0" prefWidth="949.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox prefHeight="602.0" prefWidth="919.0">
+               <children>
+                  <HBox prefHeight="45.0" prefWidth="919.0">
+                     <children>
+                        <JFXTextField fx:id="searchTextBox" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="219.0" promptText="Search by Product ID">
+                           <HBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </HBox.margin>
+                        </JFXTextField>
+                        <JFXButton prefHeight="30.0" prefWidth="96.0" styleClass="common-button" text="Select columns" visible="false">
+                           <HBox.margin>
+                              <Insets left="50.0" top="20.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <TreeTableView fx:id="treeTableView" prefHeight="566.0" prefWidth="1068.0" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TreeTableColumn fx:id="productIdColumn" prefWidth="98.0" text="Product ID" />
+                        <TreeTableColumn fx:id="batchCodeColumn" prefWidth="94.0" text="Batch Code" />
+                        <TreeTableColumn fx:id="remarkColumn" prefWidth="153.0" text="Description" />
+                        <TreeTableColumn fx:id="availableQuantityColumn" prefWidth="113.0" text="Available Quantity" />
+                        <TreeTableColumn fx:id="reorderLevelColumn" prefWidth="122.0" text="Reorder Level" />
+                        <TreeTableColumn fx:id="buyingPriceColumn" prefWidth="122.0" text="Buying Price" />
+                        <TreeTableColumn fx:id="sellingPriceColumn" prefWidth="115.0" text="Selling Price" />
+                        <TreeTableColumn fx:id="expiryDateColumn" prefWidth="113.0" text="Expiry Date" />
+                        <TreeTableColumn fx:id="manufacturedDateColumn" prefWidth="130.0" text="Manufactured Date" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </TreeTableView>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</VBox>

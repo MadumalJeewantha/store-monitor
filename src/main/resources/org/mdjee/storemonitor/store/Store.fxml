@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="stackPane" alignment="TOP_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mdjee.storemonitor.store.StoreController">
+   <children>
+      <BorderPane fx:id="borderPane" prefHeight="399.0" prefWidth="613.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../style/style.css" StackPane.alignment="TOP_LEFT">
+         <top>
+            <MenuBar BorderPane.alignment="TOP_LEFT">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Exit" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Open">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#showStoreDetails" text="Store Details" />
+                        <MenuItem mnemonicParsing="false" onAction="#showVehicleDetails" text="Vehicle Details" />
+                        <MenuItem mnemonicParsing="false" onAction="#showProductDetails" text="Product Details" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#showSendToVehicle" text="Send to Vehicle" />
+                        <MenuItem mnemonicParsing="false" onAction="#showBalanceStock" text="Balance Stock" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#showAddToStore" text="Add to Store" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </top>
+         <left>
+            <AnchorPane prefHeight="466.0" prefWidth="120.0" style="-fx-background-color: #2196f3;" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <JFXButton fx:id="storeDetailsButton" layoutX="5.0" layoutY="7.0" onAction="#showStoreDetails" prefHeight="40.0" prefWidth="107.0" style="-fx-alignment: LEFT;" styleClass="home-tile" text="Store details" textFill="WHITE" />
+                  <JFXButton fx:id="vehicleDetailsButton" layoutX="5.0" layoutY="53.0" onAction="#showVehicleDetails" prefHeight="40.0" prefWidth="107.0" style="-fx-alignment: LEFT;" styleClass="home-tile" text="Vehicle details" textFill="WHITE" />
+                  <JFXButton fx:id="productDetailsButton" layoutX="5.0" layoutY="99.0" onAction="#showProductDetails" prefHeight="40.0" prefWidth="107.0" style="-fx-alignment: LEFT;" styleClass="home-tile" text="Product details" textFill="WHITE" />
+                  <JFXButton fx:id="sendToVehicleButton" layoutX="5.0" layoutY="145.0" onAction="#showSendToVehicle" prefHeight="40.0" prefWidth="107.0" style="-fx-alignment: LEFT;" styleClass="home-tile" text="Send to vehicle" textFill="WHITE" />
+                  <JFXButton fx:id="balanceStockButton" layoutX="5.0" layoutY="191.0" onAction="#showBalanceStock" prefHeight="40.0" prefWidth="107.0" style="-fx-alignment: LEFT;" styleClass="home-tile" text="Balance stock" textFill="WHITE" />
+                  <JFXButton fx:id="addToStockButton" layoutX="5.0" layoutY="237.0" onAction="#showAddToStore" prefHeight="40.0" prefWidth="107.0" style="-fx-alignment: LEFT;" styleClass="home-tile" text="Add to store" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+   </children>
+</StackPane>

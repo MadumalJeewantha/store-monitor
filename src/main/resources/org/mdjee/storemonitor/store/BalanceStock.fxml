@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="679.0" prefWidth="1091.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mdjee.storemonitor.store.BalanceStockController">
+   <children>
+      <VBox maxHeight="200.0" prefHeight="43.0" prefWidth="748.0" style="-fx-background-color: #2196f3;">
+         <children>
+            <Label text="Balance stock" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label prefHeight="37.0" prefWidth="407.0" text="Here you can balance loaded vehicles" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" left="30.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+      <StackPane fx:id="stackPane" alignment="TOP_LEFT" prefWidth="949.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox fx:id="progressBarVBox" prefHeight="200.0" prefWidth="100.0" visible="false">
+               <children>
+                  <Label text="Please wait, processing changes">
+                     <VBox.margin>
+                        <Insets left="10.0" top="50.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXProgressBar fx:id="progressBar" prefHeight="0.0" prefWidth="485.0" progress="0.0">
+                     <VBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                     </VBox.margin>
+                  </JFXProgressBar>
+                  <Label fx:id="processStatusLabel" prefHeight="22.0" prefWidth="677.0" text="Status" wrapText="true">
+                     <padding>
+                        <Insets left="10.0" top="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox fx:id="vehicleStoreProductDetailsVBox" visible="false">
+               <children>
+                  <Label fx:id="selectedVehicleDetailsLabel" prefHeight="17.0" prefWidth="620.0" text="Selected vehicle:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TitledPane prefWidth="1055.0" text="Vehicle details">
+                     <content>
+                        <HBox prefHeight="308.0" prefWidth="1069.0" style="-fx-background-color: #FFFFFF;">
+                           <children>
+                              <VBox prefWidth="519.0">
+                                 <children>
+                                    <HBox prefHeight="53.0" prefWidth="519.0">
+                                       <children>
+                                          <JFXTextField fx:id="vehicleDetailsFilterTextField" labelFloat="true" maxHeight="-Infinity" prefHeight="25.0" prefWidth="275.0" promptText="Filter by Product ID or Batch Code">
+                                             <HBox.margin>
+                                                <Insets top="10.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                          <JFXButton fx:id="cancelBalanceStockButton" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#cancelBalanceStock" prefHeight="32.0" prefWidth="98.0" styleClass="danger-button" text="Cancel">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </JFXButton>
+                                          <JFXButton fx:id="finishBalanceStockButton" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#finishBalanceStock" prefHeight="32.0" prefWidth="98.0" styleClass="common-button" text="Finish">
+                                             <HBox.margin>
+                                                <Insets left="25.0" />
+                                             </HBox.margin>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                    <TableView fx:id="vehicleDetailsTable" maxHeight="-Infinity" prefWidth="519.0">
+                                       <columns>
+                                          <TableColumn fx:id="productIdColumnVehicleDetailsTable" editable="false" prefWidth="188.0" text="Product ID" />
+                                          <TableColumn fx:id="batchCodeColumnVehicleDetailsTable" editable="false" prefWidth="199.0" text="Batch Code" />
+                                          <TableColumn fx:id="quantityColumnVehicleDetailsTable" editable="false" prefWidth="131.0" text="Available Quantity" />
+                                       </columns>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="316.0" prefWidth="341.0">
+                                 <children>
+                                    <JFXComboBox fx:id="productIdComboBox" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="259.0" promptText="Select Product ID">
+                                       <VBox.margin>
+                                          <Insets left="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </JFXComboBox>
+                                    <JFXComboBox fx:id="batchCodeComboBox" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="259.0" promptText="Select Batch Code">
+                                       <VBox.margin>
+                                          <Insets left="20.0" top="30.0" />
+                                       </VBox.margin>
+                                    </JFXComboBox>
+                                    <JFXTextField fx:id="quantityTextField" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="259.0" promptText="Quantity">
+                                       <VBox.margin>
+                                          <Insets left="20.0" top="30.0" />
+                                       </VBox.margin>
+                                    </JFXTextField>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <JFXButton fx:id="addToSalesButton" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#addToSales" prefHeight="33.0" prefWidth="98.0" styleClass="common-button" text="Add to sales">
+                                             <HBox.margin>
+                                                <Insets left="20.0" top="30.0" />
+                                             </HBox.margin>
+                                          </JFXButton>
+                                          <JFXButton fx:id="addToReturnsButton" buttonType="RAISED" maxHeight="-Infinity" onAction="#addToReturns" prefHeight="34.0" prefWidth="98.0" styleClass="common-button" text="Add to returns">
+                                             <HBox.margin>
+                                                <Insets left="20.0" top="30.0" />
+                                             </HBox.margin>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </content>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </TitledPane>
+                  <TitledPane prefWidth="525.0" style="-fx-background-color: #FFFFFF;" text="Sales">
+                     <content>
+                        <TableView fx:id="salesTable" prefHeight="183.0" prefWidth="544.0">
+                           <columns>
+                              <TableColumn fx:id="productIdColumnSalesTable" editable="false" prefWidth="188.0" text="Product ID" />
+                              <TableColumn fx:id="batchCodeColumnSalesTable" editable="false" prefWidth="199.0" text="Batch Code" />
+                              <TableColumn fx:id="quantityColumnSalesTable" editable="false" prefWidth="131.0" text="Available Quantity" />
+                           </columns>
+                        </TableView>
+                     </content>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </TitledPane>
+                  <TitledPane expanded="false" prefWidth="525.0" style="-fx-background-color: #FFFFFF;" text="Returns">
+                     <content>
+                        <TableView fx:id="returnsTable" prefHeight="183.0" prefWidth="544.0">
+                           <columns>
+                              <TableColumn fx:id="productIdColumnReturnsTable" editable="false" prefWidth="188.0" text="Product ID" />
+                              <TableColumn fx:id="batchCodeColumnReturnsTable" editable="false" prefWidth="199.0" text="Batch Code" />
+                              <TableColumn fx:id="quantityColumnReturnsTable" editable="false" prefWidth="131.0" text="Available Quantity" />
+                           </columns>
+                        </TableView>
+                     </content>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </TitledPane>
+               </children>
+            </VBox>
+            <AnchorPane fx:id="selectVehiclePane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <TitledPane animated="false" collapsible="false" layoutX="10.0" layoutY="8.0" prefHeight="416.0" prefWidth="572.0" text="Select a vehicle to proceed">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                           <children>
+                              <JFXTextField fx:id="vehicleIdFilterTextField" labelFloat="true" layoutX="27.0" layoutY="27.0" prefHeight="25.0" prefWidth="163.0" promptText="Search by Vehicle Number" />
+                              <JFXButton fx:id="showVehicleProductButton" buttonType="RAISED" layoutX="458.0" layoutY="338.0" onAction="#showVehicleProduct" prefHeight="27.0" prefWidth="90.0" styleClass="common-button" text="Next" />
+                              <Label layoutX="27.0" layoutY="343.0" text="Selected vehicle: " />
+                              <Label fx:id="selectedVehicleLabel" layoutX="118.0" layoutY="343.0" prefHeight="17.0" prefWidth="259.0" text="None">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="vehicleTable" layoutX="27.0" layoutY="72.0" prefHeight="255.0" prefWidth="521.0">
+                                <columns>
+                                  <TableColumn fx:id="vehicleIdColumn" prefWidth="132.0" text="Vehicle Number" />
+                                  <TableColumn fx:id="loadedDateColumn" prefWidth="188.0" text="Loaded Date" />
+                                    <TableColumn fx:id="remarkColumn" prefWidth="195.0" text="Description" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</VBox>

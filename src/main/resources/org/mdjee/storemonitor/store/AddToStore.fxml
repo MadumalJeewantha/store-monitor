@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="389.0" prefViewportHeight="389.0" prefViewportWidth="586.0" prefWidth="586.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mdjee.storemonitor.store.AddToStoreController">
+   <content>
+      <VBox prefHeight="679.0" prefWidth="919.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <VBox maxHeight="200.0" prefHeight="43.0" prefWidth="748.0" style="-fx-background-color: #2196f3;">
+               <children>
+                  <Label text="Add to store" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Here you can add products to the store" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="30.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <StackPane fx:id="stackPane" alignment="TOP_LEFT" prefHeight="628.0" prefWidth="949.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="919.0">
+                     <children>
+                        <VBox layoutX="8.0" prefHeight="653.0" prefWidth="301.0">
+                           <children>
+                              <TitledPane animated="false" collapsible="false" prefHeight="605.0" prefWidth="301.0" text="Add a new product">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="574.0" prefWidth="299.0" style="-fx-background-color: #FFFFFF;">
+                                       <children>
+                                          <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="288.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../style/style.css">
+                                             <children>
+                                                <JFXTextField fx:id="productIdJFXTextField" labelFloat="true" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Product ID">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <JFXTextField fx:id="batchCodeJFXTextField" labelFloat="true" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Batch Code">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <JFXTextArea fx:id="productDescriptionJFXTextArea" labelFloat="true" maxWidth="221.0" prefHeight="35.0" prefWidth="253.0" promptText="Description" wrapText="true">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextArea>
+                                                <JFXTextField fx:id="reOrderLevelJFXTextField" labelFloat="true" layoutX="40.0" layoutY="95.0" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Reorder Level">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <JFXTextField fx:id="quantityJFXTextField" labelFloat="true" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Quantity">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <JFXTextField fx:id="buyingPriceJFXTextField" labelFloat="true" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Buying Price (LKR)">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <JFXTextField fx:id="sellingPriceJFXTextField" labelFloat="true" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Selling Price (LKR)">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <JFXDatePicker fx:id="manufacturedDateDatePicker" defaultColor="#4059a9" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Manufactured Date">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXDatePicker>
+                                                <JFXDatePicker fx:id="expiryDateDatePicker" defaultColor="#4059a9" layoutX="10.0" layoutY="321.0" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Expiry Date">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXDatePicker>
+                                                <JFXButton fx:id="addToStoreButton" buttonType="RAISED" onAction="#addToStore" prefHeight="32.0" prefWidth="103.0" styleClass="common-button" text="Add to store">
+                                                   <VBox.margin>
+                                                      <Insets left="145.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXButton>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="317.0" layoutY="-1.0" prefHeight="638.0" prefWidth="549.0">
+                           <children>
+                              <TitledPane animated="false" collapsible="false" prefHeight="605.0" prefWidth="551.0" text="Add to an existing product">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="579.0" prefWidth="554.0" style="-fx-background-color: #FFFFFF;">
+                                       <children>
+                                          <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="288.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../style/style.css">
+                                             <children>
+                                                <JFXComboBox fx:id="productIdComboBox" labelFloat="true" maxWidth="221.0" prefWidth="221.0" promptText="Select a product">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXComboBox>
+                                                <JFXComboBox fx:id="batchCodeComboBox" labelFloat="true" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Select a batch code">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXComboBox>
+                                                <JFXTextArea fx:id="productDescriptionJFXTextAreaAsLabel" editable="false" labelFloat="true" maxWidth="221.0" prefHeight="35.0" prefWidth="253.0" promptText="Description" wrapText="true">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextArea>
+                                                <JFXTextField fx:id="reOrderLevelJFXTextFieldAsLabel" editable="false" labelFloat="true" layoutX="40.0" layoutY="95.0" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Reorder Level">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <JFXTextField fx:id="quantityJFXTextFieldAsLabel" editable="false" labelFloat="true" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Available Quantity">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <JFXTextField fx:id="buyingPriceJFXTextFieldAsLabel" editable="false" labelFloat="true" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Buying Price (LKR)">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <JFXTextField fx:id="sellingPriceJFXTextFieldAsLabel" editable="false" labelFloat="true" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Selling Price (LKR)">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <JFXTextField fx:id="manufacturedDateJFXTextFieldAsLabel" editable="false" labelFloat="true" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Manufactured Date">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" right="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <JFXTextField fx:id="expiryDateJFXTextFieldAsLabel" editable="false" labelFloat="true" layoutX="10.0" layoutY="406.0" maxHeight="25.0" maxWidth="221.0" prefHeight="25.0" prefWidth="221.0" promptText="Expiry Date">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" right="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="288.0" prefHeight="313.0" prefWidth="258.0">
+                                             <children>
+                                                <Label text="Please enter new quantity here">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <JFXTextField fx:id="newQuantityJFXTextField" labelFloat="true" prefHeight="25.0" prefWidth="221.0" promptText="New Quantity">
+                                                   <VBox.margin>
+                                                      <Insets left="30.0" right="30.0" top="35.0" />
+                                                   </VBox.margin>
+                                                </JFXTextField>
+                                                <JFXButton fx:id="addToExistingStoreButton" buttonType="RAISED" onAction="#addToExistingStore" prefHeight="32.0" prefWidth="103.0" styleClass="common-button" text="Add to store">
+                                                   <VBox.margin>
+                                                      <Insets left="130.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </JFXButton>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

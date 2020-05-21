@@ -1,0 +1,33 @@
+<Configuration status="warn">
+    <Appenders>
+
+        <Console name="LogToConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <RollingFile name="LogToRollingFile" fileName="logs/stock-monitor-app.log"
+                     filePattern="logs/$${date:yyyy-MM}/stock-monitor-app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+            </PatternLayout>
+
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <!-- avoid duplicated logs with additivity=false -->
+        <Logger name="com.mdjee.stockmonitor" level="info" additivity="false">
+            <AppenderRef ref="LogToRollingFile"/>
+        </Logger>
+
+        <Root level="info">
+            <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="LogToRollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

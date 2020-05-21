@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="679.0" prefWidth="919.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mdjee.storemonitor.store.VehicleDetailsController">
+   <children>
+      <VBox maxHeight="200.0" prefHeight="43.0" prefWidth="748.0" style="-fx-background-color: #2196f3;">
+         <children>
+            <Label text="Vehicle details" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Here you will see vehicles with loaded products" textFill="#f2f2f2">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="30.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <StackPane fx:id="stackPane" alignment="TOP_LEFT" prefHeight="628.0" prefWidth="949.0">
+         <children>
+            <VBox prefHeight="602.0" prefWidth="919.0">
+               <children>
+                  <HBox prefHeight="45.0" prefWidth="919.0">
+                     <children>
+                        <JFXTextField fx:id="searchTextBox" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="219.0" promptText="Search by Vehicle ID">
+                           <HBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </HBox.margin>
+                        </JFXTextField>
+                        <JFXButton prefHeight="30.0" prefWidth="96.0" styleClass="common-button" text="Select columns" visible="false">
+                           <HBox.margin>
+                              <Insets left="50.0" top="20.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <TreeTableView fx:id="treeTableView" prefHeight="566.0" prefWidth="1068.0">
+                     <columns>
+                        <TreeTableColumn fx:id="productIdColumn" prefWidth="275.0" text="Product ID" />
+                        <TreeTableColumn fx:id="batchCodeColumn" minWidth="0.0" prefWidth="323.0" text="Batch Code" />
+                        <TreeTableColumn fx:id="availableQuantityColumn" prefWidth="240.0" text="Available Quantity" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </TreeTableView>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</VBox>

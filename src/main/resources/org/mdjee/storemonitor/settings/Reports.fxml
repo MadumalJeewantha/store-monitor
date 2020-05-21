@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefViewportHeight="389.0" prefViewportWidth="586.0" prefWidth="547.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mdjee.storemonitor.settings.ReportsController">
+   <content>
+      <VBox prefHeight="679.0" prefWidth="919.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <VBox maxHeight="200.0" prefHeight="43.0" prefWidth="748.0" style="-fx-background-color: #2196f3;">
+               <children>
+                  <Label text="Reports" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Here you can see different reports including charts" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="30.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <StackPane fx:id="stackPane" alignment="TOP_LEFT" prefHeight="628.0" prefWidth="949.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="862.0">
+                     <children>
+                        <HBox minHeight="-Infinity" prefHeight="450.0" prefWidth="862.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <PieChart fx:id="pieChart" title="Profit of current month" />
+                              <LineChart fx:id="lineChart" title="Profit of current year" HBox.hgrow="ALWAYS">
+                                <xAxis>
+                                  <CategoryAxis fx:id="monthAxis" label="Month" side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis fx:id="profitAmountAxis" label="Profit" side="LEFT" />
+                                </yAxis>
+                              </LineChart>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="249.0" prefWidth="862.0">
+                           <children>
+                              <TitledPane collapsible="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="368.0" prefWidth="416.0" text="Product details" HBox.hgrow="ALWAYS">
+                                 <content>
+                                    <AnchorPane minHeight="180.0" minWidth="200.0">
+                                       <children>
+                                          <JFXComboBox fx:id="productIdComboBoxProductDetailsPane" labelFloat="true" layoutX="14.0" layoutY="49.0" prefHeight="25.0" prefWidth="276.0" promptText="Select a Product" />
+                                          <JFXButton buttonType="RAISED" layoutX="313.0" layoutY="47.0" onAction="#showProducts" prefHeight="30.0" prefWidth="81.0" styleClass="common-button" text="Show" />
+                                          <JFXComboBox fx:id="vehicleIdComboBoxProductDetailsPane" labelFloat="true" layoutX="14.0" layoutY="133.0" prefHeight="25.0" prefWidth="276.0" promptText="Select a Vehicle" />
+                                          <JFXButton buttonType="RAISED" layoutX="313.0" layoutY="131.0" onAction="#showVehicleProducts" prefHeight="30.0" prefWidth="81.0" styleClass="common-button" text="Show" />
+                                          <JFXDatePicker fx:id="expiredDatePickerProductDetailsPane" layoutX="14.0" layoutY="212.0" prefHeight="25.0" prefWidth="276.0" />
+                                          <JFXButton buttonType="RAISED" layoutX="312.0" layoutY="209.0" onAction="#showExpiredProducts" prefHeight="30.0" prefWidth="81.0" styleClass="common-button" text="Show" />
+                                          <JFXButton buttonType="RAISED" layoutX="312.0" layoutY="278.0" onAction="#showBelowReorderLevelProducts" prefHeight="30.0" prefWidth="81.0" styleClass="common-button" text="Show" />
+                                          <Label layoutX="13.0" layoutY="310.0" text="Note: This may not consider products from loaded vehicles." />
+                                          <Label layoutX="14.0" layoutY="14.0" text="Select a product to see details of products from your store.">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="14.0" layoutY="102.0" text="Select a vehicle to see details of products from your loaded vehicles.">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="13.0" layoutY="188.0" text="See expired products for selected date.">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="12.0" layoutY="284.0" text="See products which are below re-order level.">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <TitledPane collapsible="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="198.0" prefWidth="426.0" text="Price details">
+                                       <content>
+                                          <AnchorPane minHeight="180.0" minWidth="200.0">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="14.0" text="Here you can see details of product prices.">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <JFXComboBox fx:id="productIdComboBoxPriceDetails" labelFloat="true" layoutX="14.0" layoutY="49.0" prefHeight="25.0" prefWidth="276.0" promptText="Select a Product" />
+                                                <JFXButton buttonType="RAISED" layoutX="313.0" layoutY="47.0" onAction="#showProductPrices" prefHeight="30.0" prefWidth="81.0" styleClass="common-button" text="Show" />
+                                                <JFXButton buttonType="RAISED" layoutX="312.0" layoutY="108.0" onAction="#showSellingPriceNotSaved" prefHeight="30.0" prefWidth="81.0" styleClass="common-button" text="Show" />
+                                                <Label layoutX="14.0" layoutY="117.0" text="Products do not have selling price yet.">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </TitledPane>
+                                    <TitledPane collapsible="false" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="169.0" prefWidth="426.0" text="Vehicle balance details" VBox.vgrow="ALWAYS">
+                                       <content>
+                                          <AnchorPane minHeight="117.0" minWidth="200.0">
+                                             <children>
+                                                <JFXComboBox fx:id="vehicleIdComboBoxVehicleBalanceDetails" labelFloat="true" layoutX="14.0" layoutY="36.0" prefHeight="25.0" prefWidth="276.0" promptText="Select a Vehicle" />
+                                                <JFXButton buttonType="RAISED" layoutX="313.0" layoutY="70.0" onAction="#showVehicleBalanceReport" prefHeight="30.0" prefWidth="81.0" styleClass="common-button" text="Show" />
+                                                <JFXDatePicker fx:id="balanceDateDatePickerVehicleBalanceDetails" layoutX="14.0" layoutY="76.0" prefHeight="25.0" prefWidth="275.0" />
+                                                <Label layoutX="14.0" layoutY="8.0" text="See balance report for selected vehicle of a selected date.">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                       <padding>
+                                          <Insets left="10.0" top="10.0" />
+                                       </padding>
+                                    </TitledPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" />
+                           </padding>
+                        </HBox>
+                        <TitledPane collapsible="false" prefHeight="323.0" prefWidth="842.0" text="Profit">
+                          <content>
+                            <AnchorPane minHeight="280.0" minWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="13.0" text="See profit for selected time period.">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="40.0" text="Select a duration option" />
+                                    <JFXRadioButton fx:id="todayRadioButtonProfitPane" layoutX="14.0" layoutY="73.0" selected="true" text="Today">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="period" />
+                                       </toggleGroup>
+                                    </JFXRadioButton>
+                                    <JFXRadioButton fx:id="currentMonthRadioButtonProfitPane" layoutX="14.0" layoutY="109.0" text="Current month" toggleGroup="$period" />
+                                    <JFXRadioButton fx:id="currentYearRadioButtonProfitPane" layoutX="14.0" layoutY="145.0" text="Current year" toggleGroup="$period" />
+                                    <JFXRadioButton fx:id="fromRadioButtonProfitPane" layoutX="14.0" layoutY="184.0" text="From" toggleGroup="$period" />
+                                    <Label layoutX="40.0" layoutY="231.0" text="To" />
+                                    <JFXDatePicker fx:id="fromDatePickerProfitPane" layoutX="76.0" layoutY="176.0" />
+                                    <JFXDatePicker fx:id="toDateDatePickerProfitPane" layoutX="76.0" layoutY="223.0" />
+                                    <JFXComboBox fx:id="vehicleIdComboBoxProfitPane" labelFloat="true" layoutX="335.0" layoutY="73.0" prefHeight="25.0" prefWidth="276.0" promptText="Select a Vehicle" />
+                                    <JFXButton buttonType="RAISED" layoutX="637.0" layoutY="128.0" onAction="#showProfitByProduct" prefHeight="30.0" prefWidth="81.0" styleClass="common-button" text="Show" />
+                                    <JFXComboBox fx:id="productIdComboBoxProfitPane" labelFloat="true" layoutX="335.0" layoutY="130.0" prefHeight="25.0" prefWidth="276.0" promptText="Select a Product" />
+                                    <Label layoutX="335.0" layoutY="40.0" text="Select a option to sort" />
+                                    <JFXButton buttonType="RAISED" layoutX="637.0" layoutY="69.0" onAction="#showProfitByVehicle" prefHeight="30.0" prefWidth="81.0" styleClass="common-button" text="Show" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </TitledPane>
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="358.0" prefWidth="502.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mdjee.storemonitor.config.WelcomeConfigController">
+   <children>
+      <ImageView pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@welcome-config-without-logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="179.0" layoutY="29.0" prefHeight="39.0" prefWidth="302.0" text="Welcome to the Store Monitor Configuration  Wizard 1.0" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_next" buttonType="RAISED" defaultButton="true" layoutX="346.0" layoutY="323.0" onAction="#showNext" prefHeight="25.0" prefWidth="64.0" ripplerFill="WHITE" styleClass="common-button" text="Next" textFill="#f8f8f8" />
+      <JFXButton fx:id="btn_cancel" buttonType="RAISED" layoutX="424.0" layoutY="323.0" onAction="#cancel" prefHeight="25.0" prefWidth="64.0" ripplerFill="WHITE" styleClass="common-button" text="Cancel" textFill="#f8f8f8" />
+      <Label layoutX="179.0" layoutY="105.0" prefHeight="39.0" prefWidth="282.0" text="The configuration wizard will allow you to configure Store Monitor 1.0.  To Continue, click next." wrapText="true" />
+   </children>
+</AnchorPane>

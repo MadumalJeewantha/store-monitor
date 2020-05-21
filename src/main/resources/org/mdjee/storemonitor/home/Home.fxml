@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="980.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mdjee.storemonitor.home.HomeController">
+   <children>
+      <VBox prefHeight="553.0" prefWidth="810.0" styleClass="app-wall-top-bottom" stylesheets="@../style/style.css">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="130.0" prefWidth="614.0" style="-fx-background-color: #2196f3;">
+               <children>
+                  <Label text="Hello there, Welcome back to Store Monitor!" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="108.0" prefWidth="600.0">
+               <children>
+                  <JFXButton fx:id="btn_store" buttonType="RAISED" graphicTextGap="10.0" onAction="#showStore" prefHeight="108.0" prefWidth="229.0" style="-fx-background-image: url=&quot;@../images/stock.png&quot;; -fx-alignment: LEFT;" styleClass="home-tile" text="Store" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="78.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/stock2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_balanceStock" buttonType="RAISED" onAction="#showBalanceStock" prefHeight="112.0" prefWidth="229.0" style="-fx-alignment: LEFT;" styleClass="home-tile" text="Balance Stock" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/restore.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_sendToVehicle" buttonType="RAISED" onAction="#showSendToVehicle" prefHeight="112.0" prefWidth="229.0" style="-fx-alignment: LEFT;" styleClass="home-tile" text="Send to Vehicle" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/delivery-truck-icon.png" />
+                           </image>
+                           <effect>
+                              <ColorAdjust hue="1.0" saturation="-0.31" />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="108.0" prefWidth="600.0">
+               <children>
+                  <JFXButton fx:id="btn_addToStore" buttonType="RAISED" graphicTextGap="10.0" onAction="#showAddToStore" prefHeight="112.0" prefWidth="229.0" style="-fx-background-image: url=&quot;@../images/stock.png&quot;; -fx-alignment: LEFT;" styleClass="home-tile" text="Add to Store" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/customers.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_settings" buttonType="RAISED" onAction="#showSettings" prefHeight="112.0" prefWidth="229.0" style="-fx-alignment: LEFT;" styleClass="home-tile" text="Settings" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/apps-preferences-system-windows-actions-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_reports" buttonType="RAISED" onAction="#showReports" prefHeight="112.0" prefWidth="229.0" style="-fx-alignment: LEFT;" styleClass="home-tile" text="Reports" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="74.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/monitor.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

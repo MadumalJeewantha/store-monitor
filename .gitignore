@@ -1,0 +1,16 @@
+# IDE settings
+.idea/
+
+# Store monitor logs
+logs/
+
+# Build artifacts
+out/
+
+# Maven build files
+target/
+
+# Setup related
+setup/source/Autosave/
+setup/source/Store Monitor.exe
+
