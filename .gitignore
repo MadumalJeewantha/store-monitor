@@ -12,5 +12,6 @@ target/
 
 # Setup related
 setup/source/Autosave/
+setup/source/logs
+setup/source/error.log
 setup/source/Store Monitor.exe
-
