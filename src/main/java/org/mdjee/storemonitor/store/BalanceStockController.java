@@ -809,7 +809,7 @@ public class BalanceStockController {
 
                     updateMessage("Initializing balance stock finishing process.");
 
-                    // TODO: Get product prices
+                    // Get product prices
                     List<Product> productList = getProductList();
                     // <ProductId-BatchCode, Price>
                     HashMap<String, Price> priceHashMap = new HashMap<>();
@@ -834,14 +834,14 @@ public class BalanceStockController {
                     // Vehicle ID
                     balanceHistory.setVehicleId(selectedVehicleLabel.getText());
 
-                    // TODO: BalanceHistoryReturn
+                    // BalanceHistoryReturn
                     List<BalanceHistoryReturn> balanceHistoryReturns = new ArrayList<>();
                     returnsTable.getItems()
                             .forEach(vehicleStore -> {
                                 balanceHistoryReturns
                                         .add(new BalanceHistoryReturn(vehicleStore.getProductId(), vehicleStore.getBatchCode(),
                                                 vehicleStore.getAvailableQuantity(), balanceHistory));
-                                // TODO: Update product - ADD RETURNS BACK TO STORE?
+                                // Update product - ADD RETURNS BACK TO STORE
                                 updateQuantityFromProduct(
                                         vehicleStore.getProductId(), vehicleStore.getBatchCode(),
                                         priceHashMap.get(vehicleStore.getProductId() + "-" + vehicleStore.getBatchCode())
@@ -852,7 +852,17 @@ public class BalanceStockController {
                     updateMessage("Done calculating return products.");
                     updateProgress(10, 100);
 
-                    // TODO: BalanceHistoryNotSoldProduct
+                    // BalanceHistoryNotSoldProduct
+                    // Refresh product prices and quantity
+                    productList = getProductList();
+                    // <ProductId-BatchCode, Price>
+                    // priceHashMap = new HashMap<>(); will be update from below put method
+                    productList
+                            .forEach(product -> priceHashMap
+                                    .put(product.getProductId().getProductId() + "-" + product.getProductId().getBatchCode(),
+                                            new Price(product.getProductId().getProductId(), product.getProductId().getBatchCode(),
+                                                    product.getBuyingPrice(), product.getSellingPrice(), product.getAvailableQuantity())));
+
                     List<BalanceHistoryNotSoldProduct> balanceHistoryNotSoldProducts = new ArrayList<>();
                     vehicleDetailsTable.getItems()
                             .forEach(vehicleStore -> {
@@ -875,10 +885,10 @@ public class BalanceStockController {
                     updateMessage("Done calculating not soled products. And added back to store.");
                     updateProgress(20, 100);
 
-                    // TODO: List of profit objects.
+                    // List of profit objects.
                     List<Profit> profitList = new ArrayList<>();
 
-                    // TODO: BalanceHistorySoldProduct
+                    // BalanceHistorySoldProduct
                     List<BalanceHistorySoldProduct> balanceHistorySoldProducts = new ArrayList<>();
                     salesTable.getItems()
                             .forEach(vehicleStore -> {
@@ -887,7 +897,7 @@ public class BalanceStockController {
                                         .add(new BalanceHistorySoldProduct(vehicleStore.getProductId(), vehicleStore.getBatchCode(),
                                                 vehicleStore.getAvailableQuantity(), balanceHistory));
 
-                                // TODO: Add to Profit
+                                // Add to Profit
                                 double buyingPrice = priceHashMap
                                         .get(vehicleStore.getProductId() + "-" + vehicleStore.getBatchCode()).getBuyingPrice();
                                 double sellingPrice = priceHashMap
@@ -916,19 +926,19 @@ public class BalanceStockController {
 
                     // Update status
                     updateMessage("Start saving balance history related details.");
-                    // TODO: Save BalanceHistory
+                    // Save BalanceHistory
                     saveBalanceHistory(balanceHistory);
                     updateMessage("Done saving balance history related details.");
                     updateProgress(80, 100);
 
 
-                    // TODO: Remove from VehicleStoreProduct
+                    // Remove from VehicleStoreProduct
                     removeFromVehicleStoreProducts(selectedVehicleLabel.getText());
                     updateMessage("Successfully deleted Vehicle Store Products which belongs to vehicle number: " +
                             selectedVehicleLabel.getText());
                     updateProgress(90, 100);
 
-                    // TODO: Remove from VehicleStore
+                    // Remove from VehicleStore
                     removeFromVehicleStore(selectedVehicleLabel.getText());
                     updateMessage("Successfully deleted Vehicle Store which belongs to vehicle number: " +
                             selectedVehicleLabel.getText());
