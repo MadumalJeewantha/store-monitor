@@ -1,0 +1,6 @@
+Addedd custom system variable to find JRE/JDK as first search sequence
+
+1. STORE_MONITOR_JAVA_HOME=C:\Program Files\Java\jdk1.8.0_102\ * Do not include bin
+2. Windows registry
+3. JAVA_HOME
+4. JDK_HOME

@@ -2,10 +2,16 @@
 <exe4j version="7.0" transformSequenceNumber="3">
   <directoryPresets config="D:/Documents/Projects/Store Monitor App/Store Monitor/target" />
   <application name="Store Monitor" distributionSourceDir="D:/Documents/Projects/Store Monitor App/Store Monitor/setup/source" />
-  <executable name="Store Monitor" wrapperType="embed" iconSet="true" iconFile="D:/Documents/Projects/Store Monitor App/Store Monitor/setup/source/delivery-truck-icon.ico" executableDir="." executableMode="gui" singleInstance="true">
+  <executable name="Store Monitor" wrapperType="embed" iconSet="true" iconFile="D:/Documents/Projects/Store Monitor App/Store Monitor/setup/source/delivery-truck-icon.ico" executableDir="." executableMode="gui" singleInstance="true" executionLevel="requireAdministrator">
     <versionInfo include="true" fileVersion="1.0" fileDescription="Store Monitor App" legalCopyright="© Madumal Jeewantha" companyName="MDJEE" productVersion="1.0" />
   </executable>
   <java mainClass="org.mdjee.storemonitor.App" minVersion="1.8">
+    <searchSequence>
+      <envVar name="STORE_MONITOR_JAVA_HOME" />
+      <registry />
+      <envVar name="JAVA_HOME" />
+      <envVar name="JDK_HOME" />
+    </searchSequence>
     <classPath>
       <archive location="D:/Documents/Projects/Store Monitor App/Store Monitor/target/storemonitor-1.0-jar-with-dependencies.jar" failOnError="false" />
     </classPath>

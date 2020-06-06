@@ -168,7 +168,7 @@
 <C3DSHDK format="hex">716f64</C3DSHDK>
 <TBIMG>C:\Program Files (x86)\Setup Factory 9\Themes\Connectivity\111_X_63_connect.jpg</TBIMG>
 <SBIMG>C:\Program Files (x86)\Setup Factory 9\Themes\Connectivity\166_X_312_connect.jpg</SBIMG>
-<BDIMG>D:\Documents\Projects\Store Monitor App\Setup\Source\welcome-wall.png</BDIMG>
+<BDIMG>.\welcome-wall.png</BDIMG>
 <BDFILL>0</BDFILL>
 <HDSEP>1</HDSEP>
 <FTSEP>1</FTSEP>
