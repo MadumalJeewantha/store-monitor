@@ -210,7 +210,7 @@
 	<detail>
 		<band height="479" splitType="Stretch">
 			<componentElement>
-				<reportElement x="1" y="0" width="555" height="160" uuid="578d9c7d-7df7-4874-a723-ae523720c7f5">
+				<reportElement x="1" y="0" width="555" height="180" uuid="578d9c7d-7df7-4874-a723-ae523720c7f5">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
 					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
@@ -257,111 +257,123 @@
 										</textField>
 									</jr:cell>
 								</jr:groupFooter>
-								<jr:column width="160" uuid="4236835e-a085-4b83-a88a-72b3846b4c3d">
-									<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
-									<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
-										<staticText>
-											<reportElement x="0" y="0" width="160" height="30" uuid="ae004d8c-978b-4ad6-81c6-0b1a831cfb42"/>
-											<textElement textAlignment="Center" verticalAlignment="Middle">
-												<font size="12" isBold="true"/>
-											</textElement>
-											<text><![CDATA[Batch Code]]></text>
-										</staticText>
-									</jr:columnHeader>
-									<jr:detailCell style="Table_TD" height="30">
-										<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-											<reportElement x="0" y="0" width="160" height="30" uuid="d49df5b9-cc83-45e2-8d33-f4e6ef6fd6b8"/>
-											<textElement textAlignment="Center" verticalAlignment="Middle">
+								<jr:columnGroup width="555" uuid="d2f6cee1-b5c5-436f-ace9-08568c4d1bca">
+									<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [5]"/>
+									<jr:tableFooter style="Table_TH" height="30" rowSpan="1">
+										<textField textAdjust="StretchHeight">
+											<reportElement x="0" y="0" width="555" height="30" uuid="0a26a909-3df2-420d-8318-a1b55dded009"/>
+											<textElement verticalAlignment="Middle">
 												<font size="12"/>
 											</textElement>
-											<textFieldExpression><![CDATA[$F{batchCode}]]></textFieldExpression>
+											<textFieldExpression><![CDATA["Total profit of all products: " + $V{profitAmountTotal}]]></textFieldExpression>
 										</textField>
-									</jr:detailCell>
-								</jr:column>
-								<jr:column width="110" uuid="8f13f15b-7ec4-4b1e-999f-f21e4075b853">
-									<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
-									<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
-										<staticText>
-											<reportElement x="0" y="0" width="110" height="30" uuid="d8134a65-2aa1-402e-a0dc-400f188db08c"/>
-											<textElement textAlignment="Center" verticalAlignment="Middle">
-												<font size="12" isBold="true"/>
-											</textElement>
-											<text><![CDATA[Buying Price]]></text>
-										</staticText>
-									</jr:columnHeader>
-									<jr:detailCell style="Table_TD" height="30">
-										<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-											<reportElement x="0" y="0" width="110" height="30" uuid="505b406e-7975-47d5-8da3-d8f89e9246db"/>
-											<textElement textAlignment="Center" verticalAlignment="Middle">
-												<font size="12"/>
-											</textElement>
-											<textFieldExpression><![CDATA[$F{buyingPrice}]]></textFieldExpression>
-										</textField>
-									</jr:detailCell>
-								</jr:column>
-								<jr:column width="90" uuid="13af5069-310d-4e39-a360-9b87c14e5959">
-									<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
-									<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
-										<staticText>
-											<reportElement x="0" y="0" width="90" height="30" uuid="43bfdd34-3dcb-48af-ad11-db6894be1a08"/>
-											<textElement textAlignment="Center" verticalAlignment="Middle">
-												<font size="12" isBold="true"/>
-											</textElement>
-											<text><![CDATA[Sold Price]]></text>
-										</staticText>
-									</jr:columnHeader>
-									<jr:detailCell style="Table_TD" height="30">
-										<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-											<reportElement x="0" y="0" width="90" height="30" uuid="24a24ff1-b790-40d5-947a-7a947c08f82e"/>
-											<textElement textAlignment="Center" verticalAlignment="Middle">
-												<font size="12"/>
-											</textElement>
-											<textFieldExpression><![CDATA[$F{sellingPrice}]]></textFieldExpression>
-										</textField>
-									</jr:detailCell>
-								</jr:column>
-								<jr:column width="90" uuid="faf6a93f-a614-4a17-ae0a-ce4e25c149e3">
-									<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
-									<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
-										<staticText>
-											<reportElement x="0" y="0" width="90" height="30" uuid="c0029028-505f-4afa-a432-33a7a891075a"/>
-											<textElement textAlignment="Center" verticalAlignment="Middle">
-												<font size="12" isBold="true"/>
-											</textElement>
-											<text><![CDATA[Quantity]]></text>
-										</staticText>
-									</jr:columnHeader>
-									<jr:detailCell style="Table_TD" height="30">
-										<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-											<reportElement x="0" y="0" width="90" height="30" uuid="746af053-2e0e-41c6-a8c7-782b9234fd64"/>
-											<textElement textAlignment="Center" verticalAlignment="Middle">
-												<font size="12"/>
-											</textElement>
-											<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
-										</textField>
-									</jr:detailCell>
-								</jr:column>
-								<jr:column width="105" uuid="c3135a1e-006b-4991-9f99-ee2c1e6d9a91">
-									<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
-									<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
-										<staticText>
-											<reportElement x="0" y="0" width="105" height="30" uuid="13a81889-f5b7-4300-b21d-c1d53013bd2f"/>
-											<textElement textAlignment="Center" verticalAlignment="Middle">
-												<font size="12" isBold="true"/>
-											</textElement>
-											<text><![CDATA[Profit (LKR)]]></text>
-										</staticText>
-									</jr:columnHeader>
-									<jr:detailCell style="Table_TD" height="30">
-										<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-											<reportElement x="0" y="0" width="105" height="30" uuid="73ef231b-4261-4675-a3a3-664493a2d845"/>
-											<textElement textAlignment="Center" verticalAlignment="Middle">
-												<font size="12"/>
-											</textElement>
-											<textFieldExpression><![CDATA[$F{profitAmount}]]></textFieldExpression>
-										</textField>
-									</jr:detailCell>
-								</jr:column>
+									</jr:tableFooter>
+									<jr:column width="160" uuid="4236835e-a085-4b83-a88a-72b3846b4c3d">
+										<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+										<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+											<staticText>
+												<reportElement x="0" y="0" width="160" height="30" uuid="ae004d8c-978b-4ad6-81c6-0b1a831cfb42"/>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font size="12" isBold="true"/>
+												</textElement>
+												<text><![CDATA[Batch Code]]></text>
+											</staticText>
+										</jr:columnHeader>
+										<jr:detailCell style="Table_TD" height="30">
+											<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+												<reportElement x="0" y="0" width="160" height="30" uuid="d49df5b9-cc83-45e2-8d33-f4e6ef6fd6b8"/>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font size="12"/>
+												</textElement>
+												<textFieldExpression><![CDATA[$F{batchCode}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+									<jr:column width="110" uuid="8f13f15b-7ec4-4b1e-999f-f21e4075b853">
+										<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+										<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+											<staticText>
+												<reportElement x="0" y="0" width="110" height="30" uuid="d8134a65-2aa1-402e-a0dc-400f188db08c"/>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font size="12" isBold="true"/>
+												</textElement>
+												<text><![CDATA[Buying Price]]></text>
+											</staticText>
+										</jr:columnHeader>
+										<jr:detailCell style="Table_TD" height="30">
+											<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+												<reportElement x="0" y="0" width="110" height="30" uuid="505b406e-7975-47d5-8da3-d8f89e9246db"/>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font size="12"/>
+												</textElement>
+												<textFieldExpression><![CDATA[$F{buyingPrice}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+									<jr:column width="90" uuid="13af5069-310d-4e39-a360-9b87c14e5959">
+										<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+										<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+											<staticText>
+												<reportElement x="0" y="0" width="90" height="30" uuid="43bfdd34-3dcb-48af-ad11-db6894be1a08"/>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font size="12" isBold="true"/>
+												</textElement>
+												<text><![CDATA[Sold Price]]></text>
+											</staticText>
+										</jr:columnHeader>
+										<jr:detailCell style="Table_TD" height="30">
+											<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+												<reportElement x="0" y="0" width="90" height="30" uuid="24a24ff1-b790-40d5-947a-7a947c08f82e"/>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font size="12"/>
+												</textElement>
+												<textFieldExpression><![CDATA[$F{sellingPrice}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+									<jr:column width="90" uuid="faf6a93f-a614-4a17-ae0a-ce4e25c149e3">
+										<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+										<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+											<staticText>
+												<reportElement x="0" y="0" width="90" height="30" uuid="c0029028-505f-4afa-a432-33a7a891075a"/>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font size="12" isBold="true"/>
+												</textElement>
+												<text><![CDATA[Quantity]]></text>
+											</staticText>
+										</jr:columnHeader>
+										<jr:detailCell style="Table_TD" height="30">
+											<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+												<reportElement x="0" y="0" width="90" height="30" uuid="746af053-2e0e-41c6-a8c7-782b9234fd64"/>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font size="12"/>
+												</textElement>
+												<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+									<jr:column width="105" uuid="c3135a1e-006b-4991-9f99-ee2c1e6d9a91">
+										<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+										<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+											<staticText>
+												<reportElement x="0" y="0" width="105" height="30" uuid="13a81889-f5b7-4300-b21d-c1d53013bd2f"/>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font size="12" isBold="true"/>
+												</textElement>
+												<text><![CDATA[Profit (LKR)]]></text>
+											</staticText>
+										</jr:columnHeader>
+										<jr:detailCell style="Table_TD" height="30">
+											<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+												<reportElement x="0" y="0" width="105" height="30" uuid="73ef231b-4261-4675-a3a3-664493a2d845"/>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font size="12"/>
+												</textElement>
+												<textFieldExpression><![CDATA[$F{profitAmount}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+								</jr:columnGroup>
 							</jr:columnGroup>
 						</jr:columnGroup>
 					</jr:columnGroup>
@@ -530,7 +542,7 @@
 				</jr:table>
 			</componentElement>
 			<break>
-				<reportElement x="0" y="178" width="100" height="1" uuid="f29a056c-0a82-4f74-84ea-3ffbd5ee7205"/>
+				<reportElement x="0" y="184" width="100" height="1" uuid="f29a056c-0a82-4f74-84ea-3ffbd5ee7205"/>
 			</break>
 			<break>
 				<reportElement x="0" y="338" width="100" height="1" uuid="7be0760c-910a-4a6b-b643-8391f76574aa"/>
